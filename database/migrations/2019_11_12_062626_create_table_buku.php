@@ -23,7 +23,7 @@ class CreateTableBuku extends Migration
             $table->integer('tahun');
             $table->integer('stok');
             $table->string('no_rak');
-            $table->integer('id_kategori');
+            $table->bigInteger('id_kategori');
             $table->timestamps();
         });
     }

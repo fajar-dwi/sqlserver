@@ -18,7 +18,7 @@ class CreateTablePeminjaman extends Migration
             $table->date('tgl_pinjam');
             $table->date('tgl_kembali');
             $table->string('keterangan');
-            $table->integer('id_anggota');
+            $table->bigInteger('id_anggota');
             $table->timestamps();
         });
     }

@@ -16,8 +16,8 @@ class CreateTablePeminjamanItem extends Migration
         Schema::create('table_peminjaman_item', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('qty');
-            $table->integer('id_peminjaman');
-            $table->integer('id_buku');
+            $table->bigInteger('id_peminjaman');
+            $table->bigInteger('id_buku');
             $table->timestamps();
         });
     }

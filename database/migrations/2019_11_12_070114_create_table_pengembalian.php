@@ -17,8 +17,8 @@ class CreateTablePengembalian extends Migration
             $table->bigIncrements('id');
             $table->integer('denda');
             $table->date('tgl_kembali');
-            $table->integer('id_peminjaman');
-            $table->integer('id_anggota');
+            $table->bigInteger('id_peminjaman');
+            $table->bigInteger('id_anggota');
             $table->timestamps();
         });
     }
