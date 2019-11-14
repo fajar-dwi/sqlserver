@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RoledanPermission::class);
         $this->call(MakeAdminUser::class);
+        $this->call(InsertTahundanKategori::class);
     }
 }
