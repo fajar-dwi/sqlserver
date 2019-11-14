@@ -12,10 +12,9 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('boostrap/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ asset('boostrap/css/simple-sidebar.css') }}" rel="stylesheet">
-<!-- <link rel="stylesheet" href="{{ asset('package/dist/sweetalert2.min.css') }}"> -->
 
 </head>
 
@@ -85,8 +84,7 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{{ asset('boostrap/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('boostrap/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- <script src="{{ asset('package/dist/sweetalert2.all.min.js') }}"></script>
-  <script src="{{ asset('package/dist/sweetalert2.min.js') }}"></script> -->
+<script defer src="{{ asset('fontawesome/js/all.js') }}"></script>
 
 <!-- Menu Toggle Script -->
 <script>

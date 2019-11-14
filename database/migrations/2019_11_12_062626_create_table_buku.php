@@ -20,7 +20,7 @@ class CreateTableBuku extends Migration
             $table->string('penerbit');
             $table->string('pengarang');
             $table->integer('jml_halaman');
-            $table->integer('tahun');
+            $table->bigInteger('id_tahun');
             $table->integer('stok');
             $table->string('no_rak');
             $table->bigInteger('id_kategori');

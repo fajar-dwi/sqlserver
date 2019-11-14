@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Buku;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
@@ -14,8 +15,14 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $buku = Buku::all();
-        return view('manage-buku',['buku'=>$buku]);
+        $tahun = DB::table('table_tahun')->get();
+        $kategori = DB::table('table_kategori')->get();
+        $buku = DB::table('table_buku')
+            ->join('table_kategori','table_buku.id_kategori','table_kategori.id')
+            ->join('table_tahun','table_buku.id_tahun','table_tahun.id')
+            ->select('table_buku.*','table_kategori.nama_kategori','table_tahun.tahun')
+            ->get();
+        return view('manage-buku',['buku'=>$buku,'tahun'=>$tahun,'kategori'=>$kategori]);
     }
 
     /**
@@ -70,7 +77,7 @@ class BukuController extends Controller
      */
     public function update(Request $request, Buku $buku)
     {
-        //
+        return dd($request->all());
     }
 
     /**
