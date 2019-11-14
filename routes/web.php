@@ -21,4 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/manage-buku', 'BukuController@index')->name('manage-buku');
 Route::put('/manage-buku/edit', 'BukuController@update')->name('manage-buku.update');
 Route::post('/manage-buku/tambah','BukuController@store')->name('manage-buku.tambah');
+Route::delete('/manage-buku/hapus/{id}','BukuController@destroy')->name('manage-buku.hapus');
 

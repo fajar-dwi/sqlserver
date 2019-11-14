@@ -43,7 +43,31 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        return dd($request->all());
+        //dd($request->all());
+        $request->validate([
+            'isbn' => 'required|size:9',
+            'judul' => 'required',
+            'penerbit' => 'required',
+            'pengarang' => 'required',
+            'jml_halaman' => 'required',
+            'tahun' => 'required',
+            'stok' => 'required',
+            'no_rak' => 'required',
+            'id_kategori' => 'required',
+        ]);
+
+        Buku::create([
+            'isbn' => $request->isbn,
+            'judul' => $request->judul,
+            'penerbit' => $request->penerbit,
+            'pengarang' => $request->pengarang,
+            'jml_halaman' => $request->jml_halaman,
+            'id_tahun' => $request->tahun,
+            'stok' => $request->stok,
+            'no_rak' => $request->no_rak,
+            'id_kategori' => $request->id_kategori
+        ]);
+        return redirect('/manage-buku')->with('status','Data Berhasil Ditambah');
     }
 
     /**
@@ -77,7 +101,31 @@ class BukuController extends Controller
      */
     public function update(Request $request, Buku $buku)
     {
-        return dd($request->all());
+        //dd($request->id);
+        $request->validate([
+            'isbn' => 'required|size:9',
+            'judul' => 'required',
+            'penerbit' => 'required',
+            'pengarang' => 'required',
+            'jml_halaman' => 'required',
+            'tahun' => 'required',
+            'stok' => 'required',
+            'no_rak' => 'required',
+            'id_kategori' => 'required',
+        ]);
+        Buku::where('id', $request->id )
+            ->update([
+            'isbn' => $request->isbn,
+            'judul' => $request->judul,
+            'penerbit' => $request->penerbit,
+            'pengarang' => $request->pengarang,
+            'jml_halaman' => $request->jml_halaman,
+            'id_tahun' => $request->tahun,
+            'stok' => $request->stok,
+            'no_rak' => $request->no_rak,
+            'id_kategori' => $request->id_kategori
+        ]);
+        return redirect('/manage-buku')->with('status','Data Berhasil Diupdate');
     }
 
     /**
@@ -86,8 +134,9 @@ class BukuController extends Controller
      * @param  \App\Buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Buku $buku)
+    public function destroy($id)
     {
-        //
+        Buku::where('id',$id)->delete();
+        return redirect('/manage-buku')->with('status','Data Berhasil Dihapus');
     }
 }
