@@ -28,10 +28,13 @@
         <div class="sidebar-heading">Start Bootstrap </div>
         <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+            @role('admin')
+            <a href="#" class="list-group-item list-group-item-action bg-light">Data User</a>
+            <a href="manage-buku" class="list-group-item list-group-item-action bg-light">Manage Buku</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Data Pinjam</a>
+            @endrole
+            <a href="#" class="list-group-item list-group-item-action bg-light">Data Buku</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
         </div>
     </div>
