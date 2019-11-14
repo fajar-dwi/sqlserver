@@ -13,8 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    ok bro
+                    @role('admin')
+                        gw admin
+                    @else
+                        gw user
+                    @endrole
                 </div>
             </div>
         </div>
