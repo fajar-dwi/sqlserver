@@ -18,5 +18,5 @@
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('cek');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/manage-buku', 'HomeController@index')->name('home');
+Route::get('/manage-buku', 'BukuController@index')->name('manage-buku');
 

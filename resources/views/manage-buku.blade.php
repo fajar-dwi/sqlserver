@@ -18,9 +18,10 @@
                 </tr>
             </thead>
             <tbody>
+            @foreach($buku as $row)
                 <tr>
                     <td>#</td>
-                    <td>ISBN</td>
+                    <td>{{ $row['isbn']  }}</td>
                     <td>Judul</td>
                     <td>Penerbit</td>
                     <td>Pengarang</td>
@@ -30,6 +31,7 @@
                     <td>No_Rak</td>
                     <td>Kategori</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
