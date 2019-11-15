@@ -26,11 +26,15 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
         <div class="sidebar-heading">Start Bootstrap </div>
         <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+            <a href="/" class="list-group-item list-group-item-action bg-light
+            {{ Request::is('/') ? 'active' : '' }}">Dashboard</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light
+            {{ Request::is('profile') ? 'active' : '' }}">Profile</a>
             @role('admin')
-            <a href="#" class="list-group-item list-group-item-action bg-light">Data User</a>
-            <a href="manage-buku" class="list-group-item list-group-item-action bg-light">Manage Buku</a>
+            <a href="manage-user" class="list-group-item list-group-item-action bg-light
+            {{ Request::is('manage-user') ? 'active' : '' }}">Data User</a>
+            <a href="manage-buku" class="list-group-item list-group-item-action bg-light
+            {{ Request::is('manage-buku') ? 'active' : '' }}">Manage Buku</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Data Pinjam</a>
             @endrole
             <a href="#" class="list-group-item list-group-item-action bg-light">Data Buku</a>
